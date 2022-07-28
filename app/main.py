@@ -6,6 +6,7 @@ import streamlit_folium
 from streamlit_folium import folium_static
 #from folium.plugins import LocateControl, FloatImage
 from PIL import Image
+from folium.features import DivIcon
 
 #serv_num = "111"
 #serv_num_dat, serv_bus_dat, points = match(serv_num)
