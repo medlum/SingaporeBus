@@ -1,7 +1,7 @@
 import requests
 import json
 import folium
-from DataXY import coord_info
+from DataXY import coordData
 from folium.plugins import AntPath, BeautifyIcon, LocateControl
 
 # ---- api connect bus route data ---- #

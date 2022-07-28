@@ -3,6 +3,7 @@ import requests,math
 from DataXY import coordData
 from DataRoute import routeData
 from datetime import datetime
+import datetime as dt
 from folium.features import DivIcon
 import streamlit as st
 # ---- api connect bus route data ---- #
@@ -156,6 +157,8 @@ def currentTime():
     curT = datetime.now().replace(microsecond=0)
     curTT = str(curT.time())
     current = datetime.strptime(curTT, "%H:%M:%S")
+    current = current + dt.timedelta(hours=8)
+
     return current
 
 # ---- create a 'numbered' icon---- #
