@@ -1,10 +1,10 @@
 from utils import *
-from utilsPlot import *
+from utilsPlot import match, busarrival, matchbusarrival,busstoploc,currentTime, number_DivIcon
 from utilsStream import *
 import streamlit as st
 import streamlit_folium
 from streamlit_folium import folium_static
-from folium.plugins import LocateControl, FloatImage
+#from folium.plugins import LocateControl, FloatImage
 from PIL import Image
 
 #serv_num = "111"
