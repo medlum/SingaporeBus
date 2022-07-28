@@ -1,5 +1,5 @@
-from utils import *
-from utilsPlot import match, busarrival, matchbusarrival,busstoploc,currentTime, number_DivIcon
+from utils import match, busarrival, matchbusarrival, busstoploc, currentTime, number_DivIcon
+from utilsPlot import *
 from utilsStream import *
 import streamlit as st
 import streamlit_folium
