@@ -54,7 +54,7 @@ def match(serv_num):
 def busarrival(code):
     # ---- api call ---- #
     url = f"http://datamall2.mytransport.sg/ltaodataservice/BusArrivalv2?BusStopCode={code}"
-    headers = {"AccountKey": st.secrets["LAT_APIKEY"],
+    headers = {"AccountKey": st.secrets["LTA_APIKEY"],
                "accept": "application/json"}
     response = requests.request(method="get", url=url, headers=headers)
     print(response.status_code)
