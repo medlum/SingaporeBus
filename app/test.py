@@ -1,2 +1,2 @@
-import folium
-print(folium.__version__)
+import streamlit-folium
+print(streamlit-folium.__version__)
