@@ -1,4 +1,3 @@
-from matplotlib import container
 from utils import *
 from utilsPlot import *
 from utilsStream import *
