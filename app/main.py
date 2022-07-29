@@ -25,7 +25,7 @@ busStopDesr = [i[13] for i in serv_num_dat]
 
 text1 = """
  <p style='text-align: left; color:GreenYellow';'>
- Map displays travel route of the selected bus and all other buses arriving at the selected bus-stop </p>
+ Map displays travel route of the selected bus and all other buses arriving at the selected bus-stop \U0001F68F</p>
 """
 
 text2 = """
