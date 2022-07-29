@@ -8,9 +8,6 @@ from streamlit_folium import folium_static
 from folium.plugins import LocateControl, FloatImage, FeatureGroupSubGroup
 from PIL import Image
 from folium.features import DivIcon
-from testcss import css_example
-
-
 
 st.set_page_config(
     page_title='Bus ',
@@ -18,8 +15,9 @@ st.set_page_config(
     layout="wide",
     menu_items={"About": "Data is updated on one minute interval"}
 )
-#set_bg("assets/map2.png")
-#head()
+set_bg("assets/screen4.jpg")
+head()
+
 serv_num = st.sidebar.text_input("Enter Bus No. :")
 serv_num_dat, serv_bus_dat, points = match(serv_num)
 busStopCode = [i[5] for i in serv_num_dat]
@@ -65,7 +63,7 @@ if code != "":
         st.write(
             f"<p style='text-align: left; color:GreenYellow'> Current Time: {current.time()} </p>", unsafe_allow_html=True)
         st.write(
-            f'<p style="color:GhostWhite;font-size:20px;"> Bus No {serv_num} </p>', unsafe_allow_html=True)
+            f'<p style="color:GhostWhite;font-size:40px;"> Arrival {serv_num} </p>', unsafe_allow_html=True)
         st.metric(label=f"Next Timing", value=f"\U0001F55B {eta}")
         st.metric(label=f"Subsequent Timing", value=f"\U0001F567 {eta2}")
         st.metric(label=f"Subsequent Timing", value=f"\U0001F550 {eta3}")

@@ -5,23 +5,24 @@ import streamlit as st
 def head():
     st.markdown("""
         <h2 style='text-align: left; margin-bottom: -35px;'>
-        Bus Bus Bus \U0001F41F
+        SG Bus Timing App \U0001F68D
         </h2>
     """, unsafe_allow_html=True
                 )
 
     st.caption("""
-        <p style='text-align: left'>
-        Data is refreshed on one minute interval
+        <p style='text-align: center'>
+        by <a href='https://github.com/medlum'>medlum</a>
         </p>
     """, unsafe_allow_html=True
                )
-    #st.write("""
-    #    <p style="font-size:25px";'text-align: center'>
-    #    Are the trains packed?
-    #    </p>
-    #""", unsafe_allow_html=True
-    #         )
+
+    st.write("""
+        <p style="font-size:25px";'text-align: center'>
+        Find out the estimated arrival time of your next bus!
+        </p>
+    """, unsafe_allow_html=True
+             )
 
 
 @st.cache(allow_output_mutation=True)
