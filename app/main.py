@@ -48,43 +48,35 @@ if code != "":
                     name="Light Map",
                     zoom_start=14)
 
-    loc = 'Bus Route'
-    title_html = '''
-             <h3 align="center" style="font-size:16px"><b>{}</b></h3>
-             '''.format(loc)
-
-    m.get_root().html.add_child(folium.Element(title_html))
-
-
     map_route(serv_num_dat, m)
     map_routeline(points, m)
     map_busstop(sdata, current, m)
     map_selection(busstop_loc, m)
     
-    container = st.container()
-    container.write(
+    st.write(
         f'<p style="color:GreenYellow;font-size:60px;"> Arrival for Bus No. {serv_num} </p>', unsafe_allow_html=True)
-    
+    st.write(
+        f"<p style='text-align: left; color:GreenYellow'> Current Time: {current.time()} </p>", unsafe_allow_html=True)
 
     #st.header(f"Arrival Information for Bus Number {serv_num}")
-    b1, b2, b3 = container.columns(3)
-   
-    b1.metric(label=f"Next Timing", value=f"\U0001F55B {eta}")
-    b2.metric(label=f"Subsequent Timing", value=f"\U0001F567 {eta2}")
-    b3.metric(label=f"Subsequent Timing", value=f"\U0001F550 {eta3}")
+    #b1, b2, b3 = container.columns(3)
 
-    container.write(
-        f"<p style='text-align: left; color:GreenYellow'> Current Time: {current.time()} </p>", unsafe_allow_html=True)
-    #st.write(f"Current Time: {current.time()}")
-    container.write(
-        f'<p style="color:LightSteelBlue;font-size:30px;"> Bus No. {serv_num} Route </p>', unsafe_allow_html=True)
+    col1, col2 = st.columns([3,1])
+    
+    with col1:
+        st.metric(label=f"Next Timing", value=f"\U0001F55B {eta}")
+        st.metric(label=f"Subsequent Timing", value=f"\U0001F567 {eta2}")
+        st.metric(label=f"Subsequent Timing", value=f"\U0001F550 {eta3}")
 
+    with col2:
+        st.write(
+            f'<p style="color:LightSteelBlue;font-size:30px;"> Bus No. {serv_num} Route </p>', unsafe_allow_html=True)
 
-    streamlit_folium.st_folium(m)
+        streamlit_folium.st_folium(m)
 
-    with st.expander("See explanation"):
-        image = Image.open("assets/legend_h3.png")
-        st.image(image=image)
+        with st.expander("See explanation"):
+            image = Image.open("assets/legend_h3.png")
+            st.image(image=image)
 
     
 
