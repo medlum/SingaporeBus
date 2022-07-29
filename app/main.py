@@ -10,7 +10,7 @@ from folium.features import DivIcon
 st.set_page_config(
     page_title='Bus ',
     page_icon=':shark:',
-    layout="wide",
+    layout="centered",
     menu_items={"About": "Data is updated on one minute interval"}
 )
 set_bg("assets/wallpaper.jpg")
@@ -76,7 +76,7 @@ if code != "":
         #st.write(
         #    f'<p style="color:LightSteelBlue;font-size:30px;"> Bus No. {serv_num} Route </p>', unsafe_allow_html=True)
 
-        streamlit_folium.st_folium(m, width=500,height=500)
+        streamlit_folium.st_folium(m)
 
 
 
