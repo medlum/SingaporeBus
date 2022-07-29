@@ -72,11 +72,11 @@ if code != "":
         st.metric(label=f"Subsequent Timing", value=f"\U0001F567 {eta2}")
         st.metric(label=f"Subsequent Timing", value=f"\U0001F550 {eta3}")
 
-    with st.expander.col2("Open to view map"):    
-        
-            #st.write(
-            #    f'<p style="color:LightSteelBlue;font-size:30px;"> Bus No. {serv_num} Route </p>', unsafe_allow_html=True)
-
+    with col2:
+        with st.expander("View Map Here"):
+            st.write(
+                    f'<p style="color:LightSteelBlue;font-size:30px;"> Bus No. {serv_num} Route </p>', unsafe_allow_html=True)
+            
             streamlit_folium.st_folium(m)
 
 
