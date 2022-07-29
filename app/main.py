@@ -63,22 +63,23 @@ if code != "":
     
     with col1:
         st.write(
-            f'<p style="color:GreenYellow;font-size:20px;"> Bus No. {serv_num} </p>', unsafe_allow_html=True)
-        st.write(
             f"<p style='text-align: left; color:GreenYellow'> Current Time: {current.time()} </p>", unsafe_allow_html=True)
+        st.write(
+            f'<p style="color:GhostWhite;font-size:20px;"> Bus No {serv_num} </p>', unsafe_allow_html=True)
         st.metric(label=f"Next Timing", value=f"\U0001F55B {eta}")
         st.metric(label=f"Subsequent Timing", value=f"\U0001F567 {eta2}")
         st.metric(label=f"Subsequent Timing", value=f"\U0001F550 {eta3}")
-
-    with col2:
-        st.write(
-            f'<p style="color:LightSteelBlue;font-size:30px;"> Bus No. {serv_num} Route </p>', unsafe_allow_html=True)
-
-        streamlit_folium.st_folium(m)
-
         with st.expander("See explanation"):
             image = Image.open("assets/legend_h3.png")
             st.image(image=image)
+
+    with col2:
+        #st.write(
+        #    f'<p style="color:LightSteelBlue;font-size:30px;"> Bus No. {serv_num} Route </p>', unsafe_allow_html=True)
+
+        streamlit_folium.st_folium(m)
+
+
 
     
 
