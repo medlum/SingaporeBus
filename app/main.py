@@ -53,10 +53,8 @@ if code != "":
     map_busstop(sdata, current, m)
     map_selection(busstop_loc, m)
     
-    st.write(
-        f'<p style="color:GreenYellow;font-size:60px;"> Arrival for Bus No. {serv_num} </p>', unsafe_allow_html=True)
-    st.write(
-        f"<p style='text-align: left; color:GreenYellow'> Current Time: {current.time()} </p>", unsafe_allow_html=True)
+   
+    
 
     #st.header(f"Arrival Information for Bus Number {serv_num}")
     #b1, b2, b3 = container.columns(3)
@@ -64,6 +62,10 @@ if code != "":
     col1, col2 = st.columns([1,3])
     
     with col1:
+        st.write(
+            f'<p style="color:GreenYellow;font-size:20px;"> Bus No. {serv_num} </p>', unsafe_allow_html=True)
+        st.write(
+            f"<p style='text-align: left; color:GreenYellow'> Current Time: {current.time()} </p>", unsafe_allow_html=True)
         st.metric(label=f"Next Timing", value=f"\U0001F55B {eta}")
         st.metric(label=f"Subsequent Timing", value=f"\U0001F567 {eta2}")
         st.metric(label=f"Subsequent Timing", value=f"\U0001F550 {eta3}")
