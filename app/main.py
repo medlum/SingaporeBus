@@ -7,8 +7,6 @@ import streamlit_folium
 from folium.plugins import LocateControl
 from folium.features import DivIcon
 
-st.session_state
-
 st.set_page_config(
     page_title='Bus ',
     page_icon=':shark:',
