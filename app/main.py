@@ -23,13 +23,11 @@ serv_num_dat, serv_bus_dat, points = match(serv_num)
 busStopCode = [i[5] for i in serv_num_dat]
 busStopDesr = [i[13] for i in serv_num_dat]
 selectstop = st.sidebar.selectbox(label="Select a Bus Stop", options=busStopDesr)
-
+st.sidebar.write("Map will show the bus route for the selected bus and the buses arriving to the bus-stop. Buses are colour-coded by green, amber and red to show seating availability")
 code = ""
 for index, stop in enumerate(busStopDesr):
     if stop == selectstop:
         code = busStopCode[index]
-  
-
 
 if code != "":
 
