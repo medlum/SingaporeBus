@@ -25,12 +25,12 @@ busStopDesr = [i[13] for i in serv_num_dat]
 
 text1 = """
  <p style='text-align: left; color:GreenYellow';'>
- Map will display travel route of the selected bus and all the buses arriving at the selected bus-stop </p>
+ Map displays travel route of the selected bus and all other buses arriving at the selected bus-stop </p>
 """
 
 text2 = """
  <p style='text-align: left; color:GreenYellow';'>
- Seats availability are colour-coded by : <br>
+ Seats Availability: <br>
  \U0001F7E2 Seats Available <br>
  \U0001F7E0 Limted Seats <br> 
  \U0001F534 Standing Available </p>
