@@ -4,6 +4,8 @@ from folium.plugins import LocateControl, FloatImage
 from folium.features import DivIcon
 from datetime import datetime
 from utils import *
+import streamlit as st
+
 
 def map_route(serv_num_dat, m):
 
@@ -28,7 +30,7 @@ def map_routeline(points, m):
                     weight=10,
                     opacity=0.3,
                     smooth_factor=1).add_to(m)
-
+@st.cache
 def map_busstop(sdata,current, m):
     #global eta
 
