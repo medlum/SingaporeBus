@@ -83,7 +83,7 @@ if code != "":
         #st.write(
         #    f'<p style="color:LightSteelBlue;font-size:30px;"> Bus No. {serv_num} Route </p>', unsafe_allow_html=True)
 
-        streamlit_folium.st_folium(m, width=500,height=500)
+        streamlit_folium.st_folium(m, width=500,height=550)
 
 
 
