@@ -48,6 +48,14 @@ if code != "":
                     name="Light Map",
                     zoom_start=14)
 
+    loc = 'Bus Route'
+    title_html = '''
+             <h3 align="center" style="font-size:16px"><b>{}</b></h3>
+             '''.format(loc)
+
+    m.get_root().html.add_child(folium.Element(title_html))
+
+
     map_route(serv_num_dat, m)
     map_routeline(points, m)
     map_busstop(sdata, current, m)
@@ -72,13 +80,6 @@ if code != "":
         f'<p style="color:LightSteelBlue;font-size:30px;"> Bus No. {serv_num} Route </p>', unsafe_allow_html=True)
 
 
-
-
-    #image = Image.open("assets/legend_h3.png")
-    #st.image(image=image)
-
-    #m.save("bsmap.html")
-    #folium_static(m, width=1250, height=660)
     streamlit_folium.st_folium(m)
 
     with st.expander("See explanation"):
