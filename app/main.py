@@ -67,9 +67,9 @@ if code != "":
     #st.header(f"Arrival Information for Bus Number {serv_num}")
     b1, b2, b3 = container.columns(3)
    
-    b1.metric(label=f"Next Timing", value=f"\U0001F551 {eta}")
-    b2.metric(label=f"Subsequent Timing", value=f"\U0001F551 {eta2}")
-    b3.metric(label=f"Subsequent Timing", value=f"\U0001F551 {eta3}")
+    b1.metric(label=f"Next Timing", value=f"\U0001F55B {eta}")
+    b2.metric(label=f"Subsequent Timing", value=f"\U0001F567 {eta2}")
+    b3.metric(label=f"Subsequent Timing", value=f"\U0001F550 {eta3}")
 
     container.write(
         f"<p style='text-align: left; color:GreenYellow'> Current Time: {current.time()} </p>", unsafe_allow_html=True)
