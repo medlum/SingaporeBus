@@ -7,6 +7,8 @@ import streamlit_folium
 from folium.plugins import LocateControl
 from folium.features import DivIcon
 
+st.session_state
+
 st.set_page_config(
     page_title='Bus ',
     page_icon=':shark:',
@@ -71,12 +73,13 @@ if code != "":
         st.metric(label=f"Next Timing", value=f"\U0001F55B {eta}")
         st.metric(label=f"Subsequent Timing", value=f"\U0001F567 {eta2}")
         st.metric(label=f"Subsequent Timing", value=f"\U0001F550 {eta3}")
-        
-    with col2:
-        #st.write(
-        #    f'<p style="color:LightSteelBlue;font-size:30px;"> Bus No. {serv_num} Route </p>', unsafe_allow_html=True)
 
-        streamlit_folium.st_folium(m)
+    with st.expander("Open to view map"):    
+        with col2:
+            #st.write(
+            #    f'<p style="color:LightSteelBlue;font-size:30px;"> Bus No. {serv_num} Route </p>', unsafe_allow_html=True)
+
+            streamlit_folium.st_folium(m)
 
 
 
