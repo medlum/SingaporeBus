@@ -7,7 +7,7 @@ from streamlit_folium import folium_static
 #from folium.plugins import LocateControl, FloatImage
 from PIL import Image
 from folium.features import DivIcon
-
+from testcss import css_example
 #serv_num = "111"
 #serv_num_dat, serv_bus_dat, points = match(serv_num)
 #code = "09059"
@@ -24,7 +24,7 @@ st.set_page_config(
 )
 #set_bg("assets/map2.png")
 #head()
-
+st.title(f"{css_example} Bus Information")
 serv_num = st.sidebar.text_input("Type a bus number:")
 serv_num_dat, serv_bus_dat, points = match(serv_num)
 busStopCode = [i[5] for i in serv_num_dat]

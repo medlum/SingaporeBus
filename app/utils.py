@@ -119,30 +119,6 @@ def matchbusarrival(sdata, serv_num, current):
             return eta, eta2, eta3
 
 
-
-
-            # handle display '- 1 day...' when arrival < current
-            #if str(eta).startswith("-") or str(eta2).startswith("-") or str(eta3).startswith("-"):
-            #    eta = "ARRIVING NOW"
-            #    eta2 = "ARRIVING NOW"
-            #    eta3 = "ARRIVING NOW"
-#
-            #else:
-            #    # find secs and round down
-            #    eta = f"{math.floor(eta.total_seconds()/60)} mins"
-            #    eta2 = f"{math.floor(eta2.total_seconds()/60)} mins"
-            #    eta3 = f"{math.floor(eta3.total_seconds()/60)} mins"
-#
-            #if eta == "0 mins" or eta2 == "0 mins" or eta3 == "0 mins":
-            #    eta = "ARRIVING NOW"
-            #    eta2 = "ARRIVING NOW"
-            #    eta3 = "ARRIVING NOW"
-
-            #if eta == "0 mins" or eta2 == "0 mins" or eta3 == "0 mins":
-            #    eta = "ARRIVING NOW"
-            #    eta2 = "ARRIVING NOW"
-            #    eta3 = "ARRIVING NOW"
-
 # ---- retrieve coordinates from bustop code ---- #
 
 def busstoploc(code, serv_num_dat):
