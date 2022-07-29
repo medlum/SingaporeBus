@@ -15,7 +15,7 @@ st.set_page_config(
     layout="wide",
     menu_items={"About": "Data is updated on one minute interval"}
 )
-set_bg("assets/screen4.jpg")
+set_bg("assets/wallpaper.jpg")
 head()
 
 serv_num = st.sidebar.text_input("Enter Bus No. :")
