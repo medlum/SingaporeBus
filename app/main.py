@@ -48,13 +48,6 @@ if code != "":
                     name="Light Map",
                     zoom_start=14)
 
-    title_html = '''
-             <h3 align="center" style="font-size:16px"><b>BUS ROUTE</b></h3>
-             '''
-
-    folium.Element(title_html).add_to(m)
-  
-
     map_route(serv_num_dat, m)
     map_routeline(points, m)
     map_busstop(sdata, current, m)
