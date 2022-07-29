@@ -25,7 +25,7 @@ busStopDesr = [i[13] for i in serv_num_dat]
 
 text1 = """
  <p style='text-align: left; color:GreenYellow';'>
- Map will show the bus route of the bus and all other buses arriving to the bus-stop </p>
+ Map will display travel route of the selected bus and all the buses arriving at the selected bus-stop </p>
 """
 
 text2 = """
@@ -62,19 +62,13 @@ if code != "":
     map_busstop(sdata, current, m)
     map_selection(busstop_loc, m)
     
-   
-    
-
-    #st.header(f"Arrival Information for Bus Number {serv_num}")
-    #b1, b2, b3 = container.columns(3)
-
     col1, col2 = st.columns([1,1])
     
     with col1:
         st.write(
             f"<p style='text-align: left; color:GreenYellow'> Current Time: {current.time()} </p>", unsafe_allow_html=True)
         st.write(
-            f'<p style="color:GhostWhite;font-size:40px;"> Arrival {serv_num} </p>', unsafe_allow_html=True)
+            f'<p style="color:GhostWhite;font-size:40px;"> Arrival Time for Bus {serv_num} </p>', unsafe_allow_html=True)
         st.metric(label=f"Next Timing", value=f"\U0001F55B {eta}")
         st.metric(label=f"Subsequent Timing", value=f"\U0001F567 {eta2}")
         st.metric(label=f"Subsequent Timing", value=f"\U0001F550 {eta3}")
