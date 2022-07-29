@@ -4,9 +4,7 @@ from utilsPlot import *
 from utilsStream import *
 import streamlit as st
 import streamlit_folium
-from streamlit_folium import folium_static
-from folium.plugins import LocateControl, FloatImage, FeatureGroupSubGroup
-from PIL import Image
+from folium.plugins import LocateControl
 from folium.features import DivIcon
 
 st.set_page_config(
@@ -47,9 +45,7 @@ for index, stop in enumerate(busStopDesr):
 
 if code != "":
 
-    #serv_num = "111"
     serv_num_dat, serv_bus_dat, points = match(serv_num)
-    #code = "09059"
     sdata = busarrival(code)
     busstop_loc = busstoploc(code, serv_num_dat)
     current = currentTime()
