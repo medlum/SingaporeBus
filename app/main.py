@@ -24,13 +24,13 @@ busStopCode = [i[5] for i in serv_num_dat]
 busStopDesr = [i[13] for i in serv_num_dat]
 
 text1 = """
- <p style='text-align: center; color:GreenYellow';'>
+ <p style='text-align: left; color:GreenYellow';'>
  Map will show the bus route of the bus and all other buses arriving to the bus-stop </p>
 """
 
 text2 = """
- <p style='text-align: center; color:GreenYellow';'>
- Arriving buses are colour-coded by \U0001F7E2, \U0001F7E0 and \U0001F534 for seats availability </p>
+ <p style='text-align: left; color:GreenYellow';'>
+ Arriving buses are colour-coded by \U0001F7E2 \U0001F7E0 \U0001F534 for seats availability </p>
 """
 
 selectstop = st.sidebar.selectbox(label="Select a Bus Stop", options=busStopDesr)
@@ -78,10 +78,7 @@ if code != "":
         st.metric(label=f"Next Timing", value=f"\U0001F55B {eta}")
         st.metric(label=f"Subsequent Timing", value=f"\U0001F567 {eta2}")
         st.metric(label=f"Subsequent Timing", value=f"\U0001F550 {eta3}")
-        with st.expander("See explanation"):
-            image = Image.open("assets/legend_h3.png")
-            st.image(image=image)
-
+        
     with col2:
         #st.write(
         #    f'<p style="color:LightSteelBlue;font-size:30px;"> Bus No. {serv_num} Route </p>', unsafe_allow_html=True)
