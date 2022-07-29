@@ -1,20 +1,16 @@
+from folium import FeatureGroup
 from utils import *
 from utilsPlot import *
 from utilsStream import *
 import streamlit as st
 import streamlit_folium
 from streamlit_folium import folium_static
-#from folium.plugins import LocateControl, FloatImage
+from folium.plugins import LocateControl, FloatImage, FeatureGroupSubGroup
 from PIL import Image
 from folium.features import DivIcon
 from testcss import css_example
-#serv_num = "111"
-#serv_num_dat, serv_bus_dat, points = match(serv_num)
-#code = "09059"
-#sdata = busarrival(code)
-#busstop_loc = busstoploc(code, serv_num_dat)
-#current = currentTime()
-#eta, eta2, eta3 = matchbusarrival(sdata, code, current)
+
+
 
 st.set_page_config(
     page_title='Bus ',
@@ -24,11 +20,11 @@ st.set_page_config(
 )
 #set_bg("assets/map2.png")
 #head()
-serv_num = st.sidebar.text_input("Type a bus number:")
+serv_num = st.sidebar.text_input("Enter Bus No. :")
 serv_num_dat, serv_bus_dat, points = match(serv_num)
 busStopCode = [i[5] for i in serv_num_dat]
 busStopDesr = [i[13] for i in serv_num_dat]
-selectstop = st.sidebar.selectbox(label="Select a Stop", options=busStopDesr)
+selectstop = st.sidebar.selectbox(label="Select a Bus Stop", options=busStopDesr)
 
 code = ""
 for index, stop in enumerate(busStopDesr):
@@ -52,7 +48,12 @@ if code != "":
                     name="Light Map",
                     zoom_start=14)
 
-    
+    title_html = '''
+             <h3 align="center" style="font-size:16px"><b>BUS ROUTE</b></h3>
+             '''
+
+    folium.Element(title_html).add_to(m)
+  
 
     map_route(serv_num_dat, m)
     map_routeline(points, m)
@@ -84,7 +85,8 @@ if code != "":
     #st.image(image=image)
 
     #m.save("bsmap.html")
-    folium_static(m, width=1250, height=660)
+    #folium_static(m, width=1250, height=660)
+    streamlit_folium.st_folium(m)
 
     with st.expander("See explanation"):
         image = Image.open("assets/legend_h3.png")
