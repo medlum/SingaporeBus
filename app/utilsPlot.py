@@ -30,7 +30,8 @@ def map_routeline(points, m):
                     weight=10,
                     opacity=0.3,
                     smooth_factor=1).add_to(m)
-@st.cache
+                    
+@st.cache(allow_output_mutation=True)
 def map_busstop(sdata,current, m):
     #global eta
 
