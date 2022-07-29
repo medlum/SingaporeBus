@@ -61,7 +61,7 @@ if code != "":
     #st.header(f"Arrival Information for Bus Number {serv_num}")
     #b1, b2, b3 = container.columns(3)
 
-    col1, col2 = st.columns([3,1])
+    col1, col2 = st.columns([1,3])
     
     with col1:
         st.metric(label=f"Next Timing", value=f"\U0001F55B {eta}")
