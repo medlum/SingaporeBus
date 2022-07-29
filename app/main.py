@@ -22,8 +22,21 @@ serv_num = st.sidebar.text_input("Enter Bus No. :")
 serv_num_dat, serv_bus_dat, points = match(serv_num)
 busStopCode = [i[5] for i in serv_num_dat]
 busStopDesr = [i[13] for i in serv_num_dat]
+
+text1 = """
+ <p style='text-align: center; color:GreenYellow';'>
+ Map will show the bus route of the bus and all other buses arriving to the bus-stop </p>
+"""
+
+text2 = """
+ <p style='text-align: center; color:GreenYellow';'>
+ Arriving buses are colour-coded by \U0001F7E2, \U0001F7E0 and \U0001F534 for seats availability </p>
+"""
+
 selectstop = st.sidebar.selectbox(label="Select a Bus Stop", options=busStopDesr)
-st.sidebar.write("Map will show the bus route for the selected bus and the buses arriving to the bus-stop. Buses are colour-coded by green, amber and red to show seating availability")
+st.sidebar.write(text1)
+st.sidebar.write(text2)
+
 code = ""
 for index, stop in enumerate(busStopDesr):
     if stop == selectstop:
