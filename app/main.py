@@ -24,7 +24,6 @@ st.set_page_config(
 )
 #set_bg("assets/map2.png")
 #head()
-st.write(f"{css_example} Bus Information")
 serv_num = st.sidebar.text_input("Type a bus number:")
 serv_num_dat, serv_bus_dat, points = match(serv_num)
 busStopCode = [i[5] for i in serv_num_dat]
@@ -68,7 +67,7 @@ if code != "":
     #st.header(f"Arrival Information for Bus Number {serv_num}")
     b1, b2, b3 = container.columns(3)
    
-    b1.metric(label=f"Next Timing",value = eta)
+    b1.metric(label=f"\U0001F551 Next Timing", value=eta)
     b2.metric(label=f"Subsequent Timing", value=eta2)
     b3.metric(label=f"Subsequent Timing", value=eta3)
 
