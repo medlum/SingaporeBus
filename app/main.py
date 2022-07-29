@@ -4,6 +4,7 @@ from utilsPlot import *
 from utilsStream import *
 import streamlit as st
 import streamlit_folium
+from streamlit_folium import folium_static
 from folium.plugins import LocateControl
 from folium.features import DivIcon
 
@@ -21,6 +22,9 @@ serv_num_dat, serv_bus_dat, points = match(serv_num)
 busStopCode = [i[5] for i in serv_num_dat]
 busStopDesr = [i[13] for i in serv_num_dat]
 
+selectstop = st.sidebar.selectbox(
+    label="Select a Bus Stop", options=busStopDesr)
+
 text1 = """
  <p style='text-align: left; color:GreenYellow';'>
  Map displays travel route of the selected bus and all other buses arriving at the selected bus-stop \U0001F68F</p>
@@ -34,7 +38,6 @@ text2 = """
  \U0001F534 Standing Available </p>
 """
 
-selectstop = st.sidebar.selectbox(label="Select a Bus Stop", options=busStopDesr)
 st.sidebar.write(text1, unsafe_allow_html=True)
 st.sidebar.write(text2, unsafe_allow_html=True)
 
@@ -77,7 +80,7 @@ if code != "":
             st.write(
                     f'<p style="color:LightSteelBlue;font-size:30px;"> Bus No. {serv_num} Route </p>', unsafe_allow_html=True)
             
-            streamlit_folium.st_folium(m)
+            folium_static(m)
 
 
 
