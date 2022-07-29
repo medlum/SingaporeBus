@@ -4,7 +4,7 @@ import streamlit as st
 
 def head():
     st.markdown("""
-        <h2 style='text-align: left; margin-bottom: -35px;'>
+        <h2 style='text-align: center; margin-bottom: -35px;'>
         SG Bus Timing App \U0001F68D
         </h2>
     """, unsafe_allow_html=True
