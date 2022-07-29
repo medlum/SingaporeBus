@@ -30,7 +30,10 @@ text1 = """
 
 text2 = """
  <p style='text-align: left; color:GreenYellow';'>
- Arriving buses are colour-coded by \U0001F7E2 \U0001F7E0 \U0001F534 for seats availability </p>
+ Seats availability are colour-coded by : <br>
+ \U0001F7E2 Seats Available <br>
+ \U0001F7E0 Limted Seats <br> 
+ \U0001F534 Standing Available </p>
 """
 
 selectstop = st.sidebar.selectbox(label="Select a Bus Stop", options=busStopDesr)
