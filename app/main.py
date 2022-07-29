@@ -34,8 +34,8 @@ text2 = """
 """
 
 selectstop = st.sidebar.selectbox(label="Select a Bus Stop", options=busStopDesr)
-st.sidebar.write(text1)
-st.sidebar.write(text2)
+st.sidebar.write(text1, unsafe_allow_html=True)
+st.sidebar.write(text2, unsafe_allow_html=True)
 
 code = ""
 for index, stop in enumerate(busStopDesr):
