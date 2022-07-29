@@ -24,7 +24,7 @@ st.set_page_config(
 )
 #set_bg("assets/map2.png")
 #head()
-st.title(f"{css_example} Bus Information")
+st.write(f"{css_example} Bus Information")
 serv_num = st.sidebar.text_input("Type a bus number:")
 serv_num_dat, serv_bus_dat, points = match(serv_num)
 busStopCode = [i[5] for i in serv_num_dat]
