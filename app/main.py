@@ -57,7 +57,7 @@ if code != "":
     #st.header(f"Arrival Information for Bus Number {serv_num}")
     #b1, b2, b3 = container.columns(3)
 
-    col1, col2 = st.columns([1,3])
+    col1, col2 = st.columns([1,1])
     
     with col1:
         st.write(
